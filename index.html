@@ -1,9 +1,61 @@
-<title>쓸모없는 짓:</title>
-<style>
-.DEATH {
-color: red;
-}
-</style>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>쓸모없는 짓:</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f5f5f5;
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 300px;
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    .DEATH {
+      color: red;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>페이지 이동</h2>
+  <p>파일 이름 입력 (예: about, contact)</p>
+  <input type="text" id="pageName" placeholder="페이지 이름">
+  <br>
+  <button onclick="goToPage()">이동</button>
+</div>
+
+
 
 
 
@@ -172,3 +224,22 @@ color: red;
 
 
 </h1>
+<script>
+  function goToPage() {
+    let name = document.getElementById('pageName').value.trim();
+
+    if (name === '') {
+      alert('페이지 이름을 입력하세요!');
+      return;
+    }
+
+    // .html 자동 붙이기
+    let url = name + '.html';
+
+    // 같은 폴더 기준 이동
+    window.location.href = url;
+  }
+</script>
+
+</body>
+</html>
